@@ -35,3 +35,30 @@ print(data.info())
 # Statistical summary of numeric columns
 print(data.describe())
 
+# ================================================================
+# Handling Duplicate Entries
+# ---------------------------------------------------------------
+# THOUGHT PROCESS
+# data.duplicated().sum() counts how many rows appear more than once.
+# drop_duplicates() removes those redundant rows.
+# ---------------------------------------------------------------
+
+duplicates = data.duplicated().sum()
+print ("Number of duplicate rows:", duplicates)
+
+data = data.drop_duplicates()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
