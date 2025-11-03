@@ -79,6 +79,23 @@ data = data.fillna("Unknown")
 # Verify no missing values remain
 print(data.isnull().sum())
 
+# ================================================================
+# Correcting Data Types and Formats
+# ---------------------------------------------------------------
+# THOUGHT PROCESS
+# .pd.to_numeric() converts text-like numbers (e.g., "7.1") into 
+# real floating-point numbers.and confirmed the results using .info() again.
+# errors="coerce" argument forces any non-numeric entries to become NaN (placeholder for missing values)
+# ---------------------------------------------------------------
+
+# Convert numeric-looking columns stored as text
+data["Ladder score"] = pd.to_numeric(data["Ladder score"], errors="coerce")
+data["Logged GDP per capita"] = pd.to_numeric(data["Logged GDP per capita"], errors="coerce")
+data["Freedom to make life choices"] = pd.to_numeric(data["Freedom to make life choices"], errors="coerce")
+
+# Recheck the structure
+print(data.info())
+
 
 
 
