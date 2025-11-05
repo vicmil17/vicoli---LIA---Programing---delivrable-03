@@ -96,6 +96,31 @@ data["Freedom to make life choices"] = pd.to_numeric(data["Freedom to make life 
 # Recheck the structure
 print(data.info())
 
+# ================================================================
+# PART 3
+# ---------------------------------------------------------------
+# Univariate non-graphical EDA
+# ---------------------------------------------------------------
+# THOUGHT PROCESS 
+# \n adds a blank line before the table output.
+# .iloc[] selects the first row (by position)
+# numeric_only=True -> ignore text columns and only calculate using numeric data
+# ---------------------------------------------------------------
+
+print(data.nunique())
+print("Unique categories per column:\n", data.nunique())
+print("\nFrequency counts for Region:\n", data["Regional indicator"].value_counts())
+print("\nProportion (%):\n", (data["Regional indicator"].value_counts(normalize=True) * 100).round(2))
+print("\nMost frequent category (mode):", data["Regional indicator"].mode()[0])
+
+print(data.describe())
+print("Mode:\n", data.mode().iloc[0])
+print("Variance:\n",  data.var(numeric_only=True))
+print("Skewness:\n",  data.skew(numeric_only=True))
+print("Kurtosis:\n",  data.kurt(numeric_only=True))
+
+
+
 
 
 
