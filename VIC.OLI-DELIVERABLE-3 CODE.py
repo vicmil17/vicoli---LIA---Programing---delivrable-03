@@ -198,7 +198,15 @@ plt.xlabel("Healthy Life Expectancy (Years)")
 plt.ylabel("Density")
 plt.show()
 
+# ---------------------------------------------------------------
+# f) Empirical Cumulative Distribution (ECDF)
+# ---------------------------------------------------------------
 
+sns.ecdfplot(data=data, x="Generosity", color="purple")
+plt.title("Empirical Cumulative Distribution of Generosity")
+plt.xlabel("Generosity Score")
+plt.ylabel("Cumulative Probability")
+plt.show()
 
 
 
