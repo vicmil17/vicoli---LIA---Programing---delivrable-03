@@ -156,6 +156,20 @@ plt.xlabel("Logged GDP per Capita")
 plt.ylabel("Density")
 plt.show()
 
+# ---------------------------------------------------------------
+# c) Conditioning by Region + Dodge Bars
+# ---------------------------------------------------------------
+# THOUGHT PROCESS 
+# multiple="dodge" → creates separate side-by-side bars per region
+# ---------------------------------------------------------------
+
+sns.histplot(data=data, x="Freedom to make life choices", hue="Regional indicator", multiple="dodge", bins=10)
+plt.title("Freedom to Make Life Choices by Region")
+plt.xlabel("Freedom (0–1)")
+plt.ylabel("Count")
+plt.show()
+
+
 
 
 
