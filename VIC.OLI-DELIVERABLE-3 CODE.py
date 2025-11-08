@@ -142,6 +142,21 @@ plt.xlabel("Ladder Score")
 plt.ylabel("Number of Countries")
 plt.show()
 
+# ---------------------------------------------------------------
+# b) Normalized Histogram + KDE
+# ---------------------------------------------------------------
+# THOUGHT PROCESS 
+# stat="density" normalizes the histogram so the total area = 1.
+# The KDE curve overlays to show probability density.
+# ---------------------------------------------------------------
+
+sns.histplot(data=data, x="Logged GDP per capita", bins=15, kde=True, stat="density", color="lightgreen")
+plt.title("Distribution of Logged GDP per Capita")
+plt.xlabel("Logged GDP per Capita")
+plt.ylabel("Density")
+plt.show()
+
+
 
 
 
