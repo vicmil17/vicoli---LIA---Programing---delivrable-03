@@ -169,7 +169,34 @@ plt.xlabel("Freedom (0–1)")
 plt.ylabel("Count")
 plt.show()
 
+# ---------------------------------------------------------------
+# d) Stacked Histogram (Conditioning by Income Group)
+# ---------------------------------------------------------------
+# THOUGHT PROCESS 
+# multiple="stack" → overlays histograms by category to show contribution per group.
+# pd.cut() → “Cut” means “slice a numeric column into intervals.”
+# ---------------------------------------------------------------
 
+data["Income group"] = pd.cut(
+    data["Logged GDP per capita"],
+    bins=[0, 8.5, 9.5, 10.5, 12],
+    labels=["Low", "Middle", "High", "Very High"])
+
+sns.histplot(data=data, x="Social support", hue="Income group", multiple="stack", bins=12)
+plt.title("Social Support by Income Group (Based on GDP)")
+plt.xlabel("Social Support (0–1)")
+plt.ylabel("Number of Countries")
+plt.show()
+
+# ---------------------------------------------------------------
+# e) Kernel Density Estimation with Bandwidth Control
+# ---------------------------------------------------------------
+
+sns.kdeplot(data=data, x="Healthy life expectancy", bw_adjust=0.6, fill=True, color="orange")
+plt.title("KDE of Healthy Life Expectancy")
+plt.xlabel("Healthy Life Expectancy (Years)")
+plt.ylabel("Density")
+plt.show()
 
 
 
