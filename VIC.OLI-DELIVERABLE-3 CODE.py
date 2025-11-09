@@ -345,7 +345,16 @@ plt.show()
 # Why jitter=False: Freedom scores are already continuous and well-spaced; jitter would mislead visually.
 # jitter = Randomly move the points slightly along the categorical axis so that they don’t overlap.
 # ---------------------------------------------------------------
-  
+ 
+    # (c) Beeswarm plot (3 variables)
+sns.swarmplot(data=data, x="Regional indicator", y="Ladder score", hue="Freedom to make life choices")
+plt.title("Happiness by Region and Freedom")
+plt.xticks(rotation=45)
+plt.show()
+# ---------------------------------------------------------------
+# THOUGHT PROCESS 
+# swarmplot() = smart jitter (prevents overlap completely)
+# ---------------------------------------------------------------
  
 
 
