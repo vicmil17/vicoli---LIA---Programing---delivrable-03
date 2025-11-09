@@ -368,7 +368,18 @@ plt.title("Boxenplot: Detailed Happiness Distribution by Region")
 plt.xticks(rotation=45)
 plt.show()
 
-
+ # (f) Split Violin plot (3 variables)
+sns.violinplot(data=data, x="Regional indicator", y="Ladder score", hue="Freedom to make life choices",
+               split=True, bw=0.4)
+plt.title("Split Violin Plot: Happiness vs Freedom by Region")
+plt.xticks(rotation=45)
+plt.show()
+# ---------------------------------------------------------------
+# THOUGHT PROCESS 
+# violinplot() → shows distribution shape (like mirrored KDE)
+# split=True → divides each violin by hue variable
+# bw= → bandwidth controls smoothness
+# ---------------------------------------------------------------
 
 
 
