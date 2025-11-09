@@ -280,6 +280,19 @@ sns.relplot(
 plt.suptitle("GDP vs Life Expectancy by Region", y=1.05)
 plt.show()
 
+# (b) Plot with 5 variables at once (x, y, hue, size, col)
+sns.relplot(
+    data=data,
+    x="Logged GDP per capita",
+    y="Ladder score",
+    hue="Regional indicator",       # color shows region
+    size="Healthy life expectancy", # marker size = life expectancy
+    col="Freedom to make life choices", # small multiples per freedom level
+    kind="scatter",
+    height=4, aspect=1)
+plt.suptitle("Happiness vs GDP by Region, Freedom, and Life Expectancy", y=1.05)
+plt.show()
+
 
  
 
