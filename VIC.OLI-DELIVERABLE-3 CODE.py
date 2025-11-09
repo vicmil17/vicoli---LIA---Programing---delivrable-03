@@ -381,7 +381,12 @@ plt.show()
 # bw= → bandwidth controls smoothness
 # ---------------------------------------------------------------
 
-
+   # (g) Violin plot with scatter points inside
+sns.violinplot(data=data, x="Regional indicator", y="Ladder score", inner=None, color="lightgray")
+sns.stripplot(data=data, x="Regional indicator", y="Ladder score", color="blue", size=3)
+plt.title("Violin Plot with Data Points")
+plt.xticks(rotation=45)
+plt.show()
 
 
 
