@@ -388,5 +388,9 @@ plt.title("Violin Plot with Data Points")
 plt.xticks(rotation=45)
 plt.show()
 
-
+  # (h) Bar plot (3 variables) with 97% CI
+sns.barplot(data=data, x="Regional indicator", y="Ladder score", hue="Freedom to make life choices", ci=97)
+plt.title("Bar Plot of Happiness with 97% Confidence Intervals")
+plt.xticks(rotation=45)
+plt.show()
 
