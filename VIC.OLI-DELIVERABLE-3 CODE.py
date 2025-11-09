@@ -394,3 +394,13 @@ plt.title("Bar Plot of Happiness with 97% Confidence Intervals")
 plt.xticks(rotation=45)
 plt.show()
 
+    # (i) Point plot (3 variables, dashed, 90% CI)
+sns.pointplot(data=data, x="Regional indicator", y="Ladder score", hue="Freedom to make life choices",
+              ci=90, linestyles="--")
+plt.title("Point Plot with 90% CI (Dashed Lines)")
+plt.xticks(rotation=45)
+plt.show()
+# ---------------------------------------------------------------
+# THOUGHT PROCESS 
+# pointplot() → shows mean points + CI lines
+# ---------------------------------------------------------------
