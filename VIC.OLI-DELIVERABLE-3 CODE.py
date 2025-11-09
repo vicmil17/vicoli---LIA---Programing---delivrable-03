@@ -336,6 +336,15 @@ plt.show()
 # jitter=True → spreads overlapping points horizontally
 # ---------------------------------------------------------------
 
+ # (b) Categorical scatter plot with jitter disabled
+sns.stripplot(data=data, x="Freedom to make life choices", y="Ladder score", jitter=False)
+plt.title("Happiness vs Freedom (No Jitter)")
+plt.show()
+# ---------------------------------------------------------------
+# THOUGHT PROCESS 
+# Why jitter=False: Freedom scores are already continuous and well-spaced; jitter would mislead visually.
+# jitter = Randomly move the points slightly along the categorical axis so that they don’t overlap.
+# ---------------------------------------------------------------
   
  
 
