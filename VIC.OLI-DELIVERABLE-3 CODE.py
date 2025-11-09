@@ -427,3 +427,15 @@ plt.show()
 # annot=True → show numeric values
 # cmap= → color gradient
 # ---------------------------------------------------------------
+  
+    # (b) Bivariate KDE with contours
+sns.displot(data=data, x="Logged GDP per capita", y="Ladder score",
+            kind="kde", fill=True, levels=10, thresh=0.05, cmap="mako")
+plt.title("Bivariate Density: GDP vs Happiness")
+plt.show()
+# ---------------------------------------------------------------
+# THOUGHT PROCESS 
+# kind="kde" → 2D kernel density estimate
+# levels → number of contour lines
+# thresh → visibility cutoff
+# ---------------------------------------------------------------
