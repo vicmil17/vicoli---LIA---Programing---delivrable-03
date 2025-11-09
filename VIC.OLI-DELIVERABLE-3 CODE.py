@@ -293,6 +293,16 @@ sns.relplot(
 plt.suptitle("Happiness vs GDP by Region, Freedom, and Life Expectancy", y=1.05)
 plt.show()
 
+ # (c) Line plot emphasizing continuity
+sns.relplot(
+    data=data.sort_values("Ladder score"),
+    x="Ladder score",
+    y="Healthy life expectancy",
+    kind="line",
+    ci=None) #hides the confidence interval line
+plt.title("Life Expectancy as Happiness Increases")
+plt.show()
+
 
  
 
