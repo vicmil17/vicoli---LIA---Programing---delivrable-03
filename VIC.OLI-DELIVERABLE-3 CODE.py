@@ -414,3 +414,16 @@ plt.show()
 # THOUGHT PROCESS 
 #countplot() → counts observations per category automatically
 # ---------------------------------------------------------------
+
+#6.3 Visualizing Bivariate Distributions (3 plots)
+    # (a) Heatmap with color intensity
+corr = data[["Ladder score","Logged GDP per capita","Freedom to make life choices"]].corr()
+sns.heatmap(corr, annot=True, cmap="coolwarm", linewidths=0.5)
+plt.title("Correlation Heatmap")
+plt.show()
+# ---------------------------------------------------------------
+# THOUGHT PROCESS 
+# corr() → calculates correlation matrix
+# annot=True → show numeric values
+# cmap= → color gradient
+# ---------------------------------------------------------------
