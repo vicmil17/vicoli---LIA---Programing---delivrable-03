@@ -303,6 +303,16 @@ sns.relplot(
 plt.title("Life Expectancy as Happiness Increases")
 plt.show()
 
+# (d) Plot showing Standard Deviation
+sns.relplot(
+data=data,
+    x="Logged GDP per capita",
+    y="Ladder score",
+    kind="line",
+    ci="sd")   # displays shaded area = standard deviation
+plt.title("Mean Happiness with Standard Deviation across GDP levels")
+plt.show()
+
 
  
 
