@@ -324,7 +324,19 @@ sns.lmplot(
 plt.title("Linear Regression: GDP vs Happiness by Region")
 plt.show()
 
+# 6.2 Visualizing Categorical Data (10 plots)
+    # (a) Categorical scatter plot with jitter enabled
+sns.stripplot(data=data, x="Regional indicator", y="Ladder score", jitter=True)
+plt.title("Happiness Distribution per Region (with Jitter)")
+plt.xticks(rotation=45, ha="right")
+plt.show()
+# ---------------------------------------------------------------
+# THOUGHT PROCESS 
+# stripplot() → scatter-like plot for categorical axes
+# jitter=True → spreads overlapping points horizontally
+# ---------------------------------------------------------------
 
+  
  
 
 
