@@ -208,6 +208,31 @@ plt.xlabel("Generosity Score")
 plt.ylabel("Cumulative Probability")
 plt.show()
 
+# ================================================================
+# PART 5
+# ---------------------------------------------------------------
+# Multivariate non-graphical EDA
+# ---------------------------------------------------------------
+
+import pandas as pd
+
+# Group countries by income level (using Logged GDP per capita)
+data["Income group"] = pd.cut(
+    data["Logged GDP per capita"],
+    bins=[0, 8.5, 9.5, 10.5, 12],
+    labels=["Low", "Middle", "High", "Very High"])
+
+# Group countries by freedom levels
+data["Freedom group"] = pd.cut(
+    data["Freedom to make life choices"],
+    bins=[0, 0.4, 0.7, 1.0],
+    labels=["Low", "Medium", "High"])
+
+# Group countries by life expectancy level
+data["LifeExp group"] = pd.cut(
+    data["Healthy life expectancy"],
+    bins=[0, 55, 70, 85],
+    labels=["Low", "Medium", "High"])
 
 
 
