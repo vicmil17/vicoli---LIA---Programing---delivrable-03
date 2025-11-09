@@ -404,3 +404,13 @@ plt.show()
 # THOUGHT PROCESS 
 # pointplot() → shows mean points + CI lines
 # ---------------------------------------------------------------
+
+    # (j) Bar plot of number of observations
+sns.countplot(data=data, x="Regional indicator", order=data["Regional indicator"].value_counts().index)
+plt.title("Number of Countries per Region")
+plt.xticks(rotation=45)
+plt.show()
+# ---------------------------------------------------------------
+# THOUGHT PROCESS 
+#countplot() → counts observations per category automatically
+# ---------------------------------------------------------------
