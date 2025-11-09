@@ -259,6 +259,27 @@ ct4 = pd.crosstab(
     normalize="index")
 print(ct4.round(2))
 
+# ================================================================
+# PART 6
+# ---------------------------------------------------------------
+# Multivariate graphical EDA
+# ---------------------------------------------------------------
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+# 6.1 Visualizing Statistical Relationships (5 plots)
+    # (a) Faceting with relplot() (col parameter)
+
+sns.relplot(
+    data=data,
+    x="Logged GDP per capita",
+    y="Healthy life expectancy",
+    col="Regional indicator",     # creates one subplot per region
+    kind="scatter",
+    height=4, aspect=1)
+plt.suptitle("GDP vs Life Expectancy by Region", y=1.05)
+plt.show()
+
 
  
 
