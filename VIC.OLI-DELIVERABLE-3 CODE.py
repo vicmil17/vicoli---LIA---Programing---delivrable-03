@@ -252,6 +252,13 @@ print(ct2.round(2))
 ct3 = pd.crosstab(data["Regional indicator"], data["LifeExp group"], normalize="index")
 print(ct3.round(2))
 
+# 5.4 Three-Way Crosstab — Region × Income Group × Freedom Group
+ct4 = pd.crosstab(
+    [data["Regional indicator"], data["Income group"]],
+    data["Freedom group"],
+    normalize="index")
+print(ct4.round(2))
+
 
  
 
