@@ -248,6 +248,11 @@ print(ct1.round(2))
 ct2 = pd.crosstab(data["Freedom group"], data["Income group"], normalize="columns")
 print(ct2.round(2))
 
+# 5.3 Crosstab 3 — Region × Life Expectancy Group
+ct3 = pd.crosstab(data["Regional indicator"], data["LifeExp group"], normalize="index")
+print(ct3.round(2))
+
+
  
 
 
