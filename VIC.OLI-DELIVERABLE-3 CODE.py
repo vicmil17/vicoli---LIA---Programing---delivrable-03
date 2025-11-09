@@ -234,6 +234,16 @@ data["LifeExp group"] = pd.cut(
     bins=[0, 55, 70, 85],
     labels=["Low", "Medium", "High"])
 
+# 5.1 Crosstab 1 — Income group × Region
+ct1 = pd.crosstab(data["Income group"], data["Regional indicator"], normalize="columns")
+print(ct1.round(2))
+# ---------------------------------------------------------------
+# THOUGHT PROCESS 
+# crosstab -> creates a frequency table that shows how often different 
+# combinations of categories appear together in our data.
+# normalize=, convert those counts from corsstab into proportions or percentages.
+# ---------------------------------------------------------------
+ 
 
 
 
