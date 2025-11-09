@@ -356,7 +356,11 @@ plt.show()
 # swarmplot() = smart jitter (prevents overlap completely)
 # ---------------------------------------------------------------
  
-
+ # (d) Box plot (3 variables)
+sns.boxplot(data=data, x="Regional indicator", y="Ladder score", hue="Freedom to make life choices")
+plt.title("Box Plot of Happiness by Region and Freedom")
+plt.xticks(rotation=45)
+plt.show()
 
 
 
