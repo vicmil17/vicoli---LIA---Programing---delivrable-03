@@ -439,3 +439,18 @@ plt.show()
 # levels → number of contour lines
 # thresh → visibility cutoff
 # ---------------------------------------------------------------
+
+# (c) 3-variable Heatmap (kde kind)
+sns.kdeplot(data=data, x="Freedom to make life choices", y="Ladder score",
+            hue="Regional indicator", fill=True, alpha=0.5)
+plt.title("Freedom vs Happiness by Region (Density Heatmap)")
+plt.show()
+# ---------------------------------------------------------------
+# THOUGHT PROCESS 
+# kdeplot() → continuous density with optional color dimension
+# ---------------------------------------------------------------
+
+
+
+
+
