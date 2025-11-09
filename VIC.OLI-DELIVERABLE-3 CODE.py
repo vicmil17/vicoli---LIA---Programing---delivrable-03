@@ -362,7 +362,11 @@ plt.title("Box Plot of Happiness by Region and Freedom")
 plt.xticks(rotation=45)
 plt.show()
 
-
+ # (e) Boxenplot showing distribution shape
+sns.boxenplot(data=data, x="Regional indicator", y="Ladder score")
+plt.title("Boxenplot: Detailed Happiness Distribution by Region")
+plt.xticks(rotation=45)
+plt.show()
 
 
 
