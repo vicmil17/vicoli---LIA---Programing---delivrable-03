@@ -313,6 +313,17 @@ data=data,
 plt.title("Mean Happiness with Standard Deviation across GDP levels")
 plt.show()
 
+ # (e) Linear Regression Plot
+sns.lmplot(
+    data=data,
+    x="Logged GDP per capita",
+    y="Ladder score",
+    hue="Regional indicator",
+    scatter_kws={"alpha":0.6}
+)
+plt.title("Linear Regression: GDP vs Happiness by Region")
+plt.show()
+
 
  
 
