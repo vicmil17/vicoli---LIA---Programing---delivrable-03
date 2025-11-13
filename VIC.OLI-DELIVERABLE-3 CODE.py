@@ -393,16 +393,7 @@ sns.stripplot(
     hue="Freedom to make life choices",
     dodge=True,
     size=8,
-    alpha=0.8
-)
-
-# Move legend outside the plot area
-plt.legend(
-    title="Freedom to make life choices",
-    bbox_to_anchor=(1.05, 1),
-    loc='upper left',
-    borderaxespad=0.
-)
+    alpha=0.8)
 
  # (e) Boxenplot showing distribution shape
 sns.boxenplot(data=data, x="Regional indicator", y="Ladder score")
