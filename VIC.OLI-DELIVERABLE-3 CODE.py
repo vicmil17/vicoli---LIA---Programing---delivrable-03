@@ -289,17 +289,22 @@ g.fig.savefig("gdp_life_expectancy_region_HD.png", dpi=300, bbox_inches="tight")
 plt.show()
 
 # (b) Plot with 5 variables at once (x, y, hue, size, col)
-sns.relplot(
+g = sns.relplot(
     data=data,
     x="Logged GDP per capita",
     y="Ladder score",
-    hue="Regional indicator",       # color shows region
-    size="Healthy life expectancy", # marker size = life expectancy
-    col="Freedom to make life choices", # small multiples per freedom level
+    hue="Regional indicator",
+    size="Healthy life expectancy",
+    col="Regional indicator",
+    col_wrap=4,             # ensures readable layout
     kind="scatter",
-    height=4, aspect=1)
-plt.suptitle("Happiness vs GDP by Region, Freedom, and Life Expectancy", y=1.05)
-plt.show()
+    height=5,               # bigger plots
+    aspect=1.2              # wider
+)
+
+g.fig.suptitle(
+    "Happiness vs GDP by Region, Freedom, and Life Expectancy",
+    y=1.04, fontsize=20)
 
  # (c) Line plot emphasizing continuity
 sns.relplot(
