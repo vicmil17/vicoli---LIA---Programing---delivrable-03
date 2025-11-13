@@ -402,19 +402,36 @@ plt.xticks(rotation=45)
 plt.show()
 
  # (f) Split Violin plot (3 variables)
+plt.figure(figsize=(20, 10))
 sns.violinplot(data=data, x="Regional indicator", y="Ladder score", hue="Freedom to make life choices",
                split=True, bw=0.4)
+
+# Add clear, visible datapoints on top
+sns.stripplot(
+    data=data,
+    x="Regional indicator",
+    y="Ladder score",
+    hue="Freedom to make life choices",
+    dodge=True,
+    size=7,        # bigger points
+    alpha=0.8,
+)
+
 plt.title("Split Violin Plot: Happiness vs Freedom by Region")
-plt.xticks(rotation=45)
+plt.xticks(rotation=45, ha="right", fontsize=12)
+plt.xlabel("Regional indicator", fontsize=14)
+plt.ylabel("Ladder score", fontsize=14)
 plt.show()
 # ---------------------------------------------------------------
 # THOUGHT PROCESS 
 # violinplot() → shows distribution shape (like mirrored KDE)
 # split=True → divides each violin by hue variable
 # bw= → bandwidth controls smoothness
+# stripplot → displays all individual data points along a category axis, showing the raw values and their spread.
 # ---------------------------------------------------------------
 
    # (g) Violin plot with scatter points inside
+plt.figure(figsize=(18, 8)) 
 sns.violinplot(data=data, x="Regional indicator", y="Ladder score", inner=None, color="lightgray")
 sns.stripplot(data=data, x="Regional indicator", y="Ladder score", color="blue", size=3)
 plt.title("Violin Plot with Data Points")
@@ -422,16 +439,19 @@ plt.xticks(rotation=45)
 plt.show()
 
   # (h) Bar plot (3 variables) with 97% CI
+plt.figure(figsize=(16, 8))
 sns.barplot(data=data, x="Regional indicator", y="Ladder score", hue="Freedom to make life choices", ci=97)
-plt.title("Bar Plot of Happiness with 97% Confidence Intervals")
-plt.xticks(rotation=45)
+plt.title("Bar Plot of Happiness with 97% Confidence Intervals", fontsize=18)
+plt.xticks(rotation=45, ha="right")
+plt.tight_layout()
 plt.show()
 
     # (i) Point plot (3 variables, dashed, 90% CI)
+plt.figure(figsize=(16, 10))
 sns.pointplot(data=data, x="Regional indicator", y="Ladder score", hue="Freedom to make life choices",
               ci=90, linestyles="--")
-plt.title("Point Plot with 90% CI (Dashed Lines)")
-plt.xticks(rotation=45)
+plt.title("Point Plot with 90% CI (Dashed Lines)", fontsize=20)
+plt.xticks(rotation=45, ha="right",fontsize=12)
 plt.show()
 # ---------------------------------------------------------------
 # THOUGHT PROCESS 
@@ -441,7 +461,7 @@ plt.show()
     # (j) Bar plot of number of observations
 sns.countplot(data=data, x="Regional indicator", order=data["Regional indicator"].value_counts().index)
 plt.title("Number of Countries per Region")
-plt.xticks(rotation=45)
+plt.xticks(rotation=45, ha="right",fontsize=12)
 plt.show()
 # ---------------------------------------------------------------
 # THOUGHT PROCESS 
