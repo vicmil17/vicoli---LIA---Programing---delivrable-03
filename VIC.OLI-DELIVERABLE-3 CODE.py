@@ -462,6 +462,8 @@ plt.show()
 # ---------------------------------------------------------------
 # THOUGHT PROCESS 
 # kdeplot() → continuous density with optional color dimension
+# common_norm=False prevents the KDE from disappearing due to small group sizes.
+# bw_adjust makes the density smooth enough to actually appear on the graph.
 # ---------------------------------------------------------------
 
 
