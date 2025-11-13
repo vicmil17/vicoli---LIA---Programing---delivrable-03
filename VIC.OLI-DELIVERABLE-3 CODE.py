@@ -347,9 +347,16 @@ plt.show()
 # ---------------------------------------------------------------
 
  # (b) Categorical scatter plot with jitter disabled
-sns.stripplot(data=data, x="Freedom to make life choices", y="Ladder score", jitter=False)
+sns.scatterplot(
+    data=data,
+    x="Freedom to make life choices",
+    y="Ladder score"
+)
 plt.title("Happiness vs Freedom (No Jitter)")
+plt.xlabel("Freedom to make life choices")
+plt.ylabel("Ladder score")
 plt.show()
+
 # ---------------------------------------------------------------
 # THOUGHT PROCESS 
 # Why jitter=False: Freedom scores are already continuous and well-spaced; jitter would mislead visually.
