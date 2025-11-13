@@ -241,7 +241,7 @@ print(ct1.round(2))
 # THOUGHT PROCESS 
 # crosstab -> creates a frequency table that shows how often different 
 # combinations of categories appear together in our data.
-# normalize=, convert those counts from corsstab into proportions or percentages.
+# normalize= convert those counts from corsstab into proportions or percentages.
 # ---------------------------------------------------------------
 
 # 5.2 Crosstab 2 — Freedom group × Income group
@@ -270,14 +270,22 @@ import matplotlib.pyplot as plt
 # 6.1 Visualizing Statistical Relationships (5 plots)
     # (a) Faceting with relplot() (col parameter)
 
-sns.relplot(
+g = sns.relplot(
     data=data,
     x="Logged GDP per capita",
     y="Healthy life expectancy",
     col="Regional indicator",     # creates one subplot per region
+    col_wrap=3,     
     kind="scatter",
-    height=4, aspect=1)
+    height=4, aspect=1.2)
 plt.suptitle("GDP vs Life Expectancy by Region", y=1.05)
+
+# Move title up and enlarge it
+g.fig.suptitle("GDP vs Life Expectancy by Region", y=1.03, fontsize=18)
+
+# Save in high resolution (HD)
+g.fig.savefig("gdp_life_expectancy_region_HD.png", dpi=300, bbox_inches="tight")
+
 plt.show()
 
 # (b) Plot with 5 variables at once (x, y, hue, size, col)
