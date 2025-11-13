@@ -364,9 +364,11 @@ plt.show()
 # ---------------------------------------------------------------
  
     # (c) Beeswarm plot (3 variables)
+plt.figure(figsize=(14, 8))
 sns.swarmplot(data=data, x="Regional indicator", y="Ladder score", hue="Freedom to make life choices")
 plt.title("Happiness by Region and Freedom")
-plt.xticks(rotation=45)
+plt.xticks(rotation=60,ha="right" )
+plt.tight_layout()
 plt.show()
 # ---------------------------------------------------------------
 # THOUGHT PROCESS 
