@@ -376,10 +376,33 @@ plt.show()
 # ---------------------------------------------------------------
  
  # (d) Box plot (3 variables)
-sns.boxplot(data=data, x="Regional indicator", y="Ladder score", hue="Freedom to make life choices")
-plt.title("Box Plot of Happiness by Region and Freedom")
-plt.xticks(rotation=45)
+plt.figure(figsize=(20, 10))
+sns.boxplot(data=data, x="Regional indicator", y="Ladder score")
+plt.title("Box Plot of Happiness by Region and Freedom", fontsize=22)
+plt.xticks(rotation=60, ha="right", fontsize=16)
+plt.xlabel("Regional indicator", fontsize=16)
+plt.ylabel("Ladder score", fontsize=16)
+plt.tight_layout()
 plt.show()
+
+# Add visible datapoints
+sns.stripplot(
+    data=data,
+    x="Regional indicator",
+    y="Ladder score",
+    hue="Freedom to make life choices",
+    dodge=True,
+    size=8,
+    alpha=0.8
+)
+
+# Move legend outside the plot area
+plt.legend(
+    title="Freedom to make life choices",
+    bbox_to_anchor=(1.05, 1),
+    loc='upper left',
+    borderaxespad=0.
+)
 
  # (e) Boxenplot showing distribution shape
 sns.boxenplot(data=data, x="Regional indicator", y="Ladder score")
