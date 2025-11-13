@@ -283,9 +283,6 @@ plt.suptitle("GDP vs Life Expectancy by Region", y=1.05)
 # Move title up and enlarge it
 g.fig.suptitle("GDP vs Life Expectancy by Region", y=1.03, fontsize=18)
 
-# Save in high resolution (HD)
-g.fig.savefig("gdp_life_expectancy_region_HD.png", dpi=300, bbox_inches="tight")
-
 plt.show()
 
 # (b) Plot with 5 variables at once (x, y, hue, size, col)
@@ -303,7 +300,7 @@ g = sns.relplot(
 )
 
 g.fig.suptitle(
-    "Happiness vs GDP by Region, Freedom, and Life Expectancy",
+    "Happiness vs GDP by Region and Life Expectancy",
     y=1.04, fontsize=20)
 
  # (c) Line plot emphasizing continuity
