@@ -441,10 +441,24 @@ plt.show()
 # ---------------------------------------------------------------
 
 # (c) 3-variable Heatmap (kde kind)
-sns.kdeplot(data=data, x="Freedom to make life choices", y="Ladder score",
-            hue="Regional indicator", fill=True, alpha=0.5)
+plt.figure(figsize=(10,7))
+
+sns.kdeplot(
+    data=data,
+    x="Freedom to make life choices",
+    y="Ladder score",
+    hue="Regional indicator",
+    fill=True,
+    alpha=0.5,
+    bw_adjust=1.5,
+    common_norm=False)
+
 plt.title("Freedom vs Happiness by Region (Density Heatmap)")
+plt.xlabel("Freedom to make life choices")
+plt.ylabel("Ladder score")
+plt.tight_layout()
 plt.show()
+
 # ---------------------------------------------------------------
 # THOUGHT PROCESS 
 # kdeplot() → continuous density with optional color dimension
