@@ -119,19 +119,19 @@ print("Variance:\n",  data.var(numeric_only=True))
 print("Skewness:\n",  data.skew(numeric_only=True))
 print("Kurtosis:\n",  data.kurt(numeric_only=True))
 
+# ---------------------------------------------------------------
+# INTERPRETATION -- added for section 3 
+# Moderate variance acorss most numeric values -> diverse country conditions
+# ladder score shows low skewness, representing symmetrical happiness distributions worldwide.
+#  Kurtosis values near zero indicate distributions without extreme outliers.
+
 # ================================================================
 # PART 4
 # ---------------------------------------------------------------
 # Univariate graphical EDA
 # ---------------------------------------------------------------
 # a) Custom bins + Kernel Density Estimation
-# ---------------------------------------------------------------
-# INTERPRETATION
-# The Ladder score is approximately normal, centered around 5.5.
-# Slight left skew (longer tail on the lower end).
-# No extreme outliers; most countries fall between 4 and 7.
-# The median and mean are close, confirming near symmetry.
-# ---------------------------------------------------------------
+
 
 import seaborn as sns
 import matplotlib.pyplot as plt
@@ -141,6 +141,13 @@ plt.title("Distribution of Ladder Score (Happiness)")
 plt.xlabel("Ladder Score")
 plt.ylabel("Number of Countries")
 plt.show()
+# ---------------------------------------------------------------
+# INTERPRETATION
+# The Ladder score is approximately normal, centered around 5.5.
+# Slight left skew (longer tail on the lower end).
+# No extreme outliers; most countries fall between 4 and 7.
+# The median and mean are close, confirming near symmetry.
+# ---------------------------------------------------------------
 
 # ---------------------------------------------------------------
 # b) Normalized Histogram + KDE
@@ -150,11 +157,17 @@ plt.show()
 # The KDE curve overlays to show probability density.
 # ---------------------------------------------------------------
 
+
 sns.histplot(data=data, x="Logged GDP per capita", bins=15, kde=True, stat="density", color="lightgreen")
 plt.title("Distribution of Logged GDP per Capita")
 plt.xlabel("Logged GDP per Capita")
 plt.ylabel("Density")
 plt.show()
+# ---------------------------------------------------------------
+# INTERPRETATION
+# Middle-income nations dominate between values 9–10
+# High-income countries form a smaller right tail
+# ---------------------------------------------------------------
 
 # ---------------------------------------------------------------
 # c) Conditioning by Region + Dodge Bars
@@ -168,6 +181,11 @@ plt.title("Freedom to Make Life Choices by Region")
 plt.xlabel("Freedom (0–1)")
 plt.ylabel("Count")
 plt.show()
+# ---------------------------------------------------------------
+# INTERPRETATION
+# Western Europe and North America cluster near high freedom (0.8–0.9)
+# Sub-Saharan Africa and South Asia show more low-freedom values
+# ---------------------------------------------------------------
 
 # ---------------------------------------------------------------
 # d) Stacked Histogram (Conditioning by Income Group)
@@ -187,6 +205,10 @@ plt.title("Social Support by Income Group (Based on GDP)")
 plt.xlabel("Social Support (0–1)")
 plt.ylabel("Number of Countries")
 plt.show()
+# ---------------------------------------------------------------
+# INTERPRETATION
+# Low-income countries cluster on the lower end (0.55–0.75)
+# ---------------------------------------------------------------
 
 # ---------------------------------------------------------------
 # e) Kernel Density Estimation with Bandwidth Control
@@ -197,6 +219,10 @@ plt.title("KDE of Healthy Life Expectancy")
 plt.xlabel("Healthy Life Expectancy (Years)")
 plt.ylabel("Density")
 plt.show()
+# ---------------------------------------------------------------
+# INTERPRETATION
+# Two peaks reflect inequality between lower-income (~55–60 yrs) and richer nations (~65–70 yrs))
+# ---------------------------------------------------------------
 
 # ---------------------------------------------------------------
 # f) Empirical Cumulative Distribution (ECDF)
@@ -207,6 +233,10 @@ plt.title("Empirical Cumulative Distribution of Generosity")
 plt.xlabel("Generosity Score")
 plt.ylabel("Cumulative Probability")
 plt.show()
+# ---------------------------------------------------------------
+# INTERPRETATION
+# Over half of all countries have generosity below 0.05
+# ---------------------------------------------------------------
 
 # ================================================================
 # PART 5
@@ -284,6 +314,11 @@ plt.suptitle("GDP vs Life Expectancy by Region", y=1.05)
 g.fig.suptitle("GDP vs Life Expectancy by Region", y=1.03, fontsize=18)
 
 plt.show()
+# ---------------------------------------------------------------
+# INTERPRETATION
+# Higher GDP regions (Western Europe, NA/ANZ) show high life expectancy
+# Sub-Saharan Africa shows low GDP and low expectancy
+# ---------------------------------------------------------------
 
 # (b) Plot with 5 variables at once (x, y, hue, size, col)
 g = sns.relplot(
@@ -322,6 +357,10 @@ data=data,
     ci="sd")   # displays shaded area = standard deviation
 plt.title("Mean Happiness with Standard Deviation across GDP levels")
 plt.show()
+# ---------------------------------------------------------------
+# INTERPRETATION
+# Variability decreases at higher GDP levels
+# ---------------------------------------------------------------
 
  # (e) Linear Regression Plot
 sns.lmplot(
@@ -465,7 +504,7 @@ plt.xticks(rotation=45, ha="right",fontsize=12)
 plt.show()
 # ---------------------------------------------------------------
 # THOUGHT PROCESS 
-#countplot() → counts observations per category automatically
+# countplot() → counts observations per category automatically
 # ---------------------------------------------------------------
 
 #6.3 Visualizing Bivariate Distributions (3 plots)
@@ -474,6 +513,11 @@ corr = data[["Ladder score","Logged GDP per capita","Freedom to make life choice
 sns.heatmap(corr, annot=True, cmap="coolwarm", linewidths=0.5)
 plt.title("Correlation Heatmap")
 plt.show()
+# ---------------------------------------------------------------
+# INTERPRETATION
+# GDP shows strongest correlation with happiness (0.79)
+# ---------------------------------------------------------------
+
 # ---------------------------------------------------------------
 # THOUGHT PROCESS 
 # corr() → calculates correlation matrix
